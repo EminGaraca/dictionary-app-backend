@@ -6,6 +6,6 @@ RUN mvn clean package -DskipTests
 
 FROM openjdk:11-jdk-slim-sid
 WORKDIR /app
-COPY --from=build /app/target/dictionary-0.1.1-SNAPSHOT.jar ./dictionary.jar
+COPY --from=build /app/target/dictionary-0.0.1-SNAPSHOT.jar ./dictionary.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "dictionary.jar"]
